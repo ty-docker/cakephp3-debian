@@ -13,6 +13,7 @@ RUN apt-get -y install apt-utils
 RUN apt-get -y install libicu-dev
 RUN apt-get -y install libxslt1-dev
 RUN apt-get -y install $PHPIZE_DEPS
+RUN apt-get -y install unzip zip
 
 ## install php extension
 RUN docker-php-ext-install pdo_mysql
