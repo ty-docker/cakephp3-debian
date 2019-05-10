@@ -8,6 +8,9 @@ RUN apt-get update
 RUN apt-get -y install git
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+## install sqlite3 for some tests
+RUN apt-get -y install sqlite3
+
 ## install library for php extension
 RUN apt-get -y install apt-utils
 RUN apt-get -y install libicu-dev
