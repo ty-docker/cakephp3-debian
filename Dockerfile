@@ -4,9 +4,12 @@ FROM php:7.2.16-cli-stretch
 RUN apt-get clean
 RUN apt-get update
 
-## install git composer
+## install git
 RUN apt-get -y install git
+
+## install composer and its plugin
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer global require hirak/prestissimo
 
 ## install sqlite3 for some tests
 RUN apt-get -y install sqlite3
